@@ -24,9 +24,10 @@ module.exports = class Block {
 
     makeHash() {
         let content = [this.difficulty, this.nounce, this.timestamp, this.prevHash, this.txs.join(";")].join(";");
-        let x = crypto.createHash('sha256').update(content).digest("base64");
-        console.log(x);
+        let hash = crypto.createHash('sha256').update(content).digest("base64");
+        
+        console.log(hash);
 
-        return x;
+        return hash;
     }
 }

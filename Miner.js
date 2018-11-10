@@ -28,9 +28,10 @@ module.exports = class Miner {
                 block.increaseNounce();
             }
 
-            // Insert new valid block to block change
+            // Insert new valid block to blockchain
             this.chain.addBlock(block);
 
+            // remove mined txs from pool
             this.txPool.splice(0, block.txs.length);
 
             console.log("MINED~~ YEAH", block);
