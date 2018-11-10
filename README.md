@@ -15,7 +15,7 @@
 ## Bài tập về nhà
 ### Bắt buộc
 1. Miner: Gắp transaction từ pool vào block theo thứ tự gas cao nhất
-2. Thêm hàm Blockchain.getBalance(address) trả về số dư của address đó
+2. Thêm hàm Blockchain.getBalance(address) trả về số dư của address đó, bằng cách duyệt từng tx từ block 0 để xem lịch sử chuyển và nhận tiền.
 
 ### Không bắt buộc
 1. Ở Miner, tạo 1 map (address->amount) để cache số dư của từng address sau mỗi tx. Khi có block mới được mined, chạy từng tx và update cache. Sửa hàm getBalance ở trên để get từ cache thay vì chạy lại từng tx từ block 0.
