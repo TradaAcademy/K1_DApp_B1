@@ -6,7 +6,7 @@ module.exports = class Block {
         this.txs = txs || [];
         this.difficulty = difficulty;
         this.prevHash = prevHash || "0";
-        this.nounce = 0;
+        this.nonce = 0;
         this.timestamp = Date.now();
         this.hash = this.makeHash();
     }
@@ -15,16 +15,16 @@ module.exports = class Block {
         return this.hash.startsWith("0".repeat(params.DIFFICULTY));
     }
 
-    increaseNounce() {
+    increaseNonce() {
         this.timestamp = Date.now();
-        this.nounce++;
+        this.nonce++;
 
         this.hash = this.makeHash();
     }
 
     makeHash() {
-        let content = [this.difficulty, this.nounce, this.timestamp, this.prevHash, this.txs.join(";")].join(";");
-        let hash = crypto.createHash('sha256').update(content).digest("base64");
+        let content = [this.difficulty, this.nonce, this.timestamp, this.prevHash, this.txs.join(";")].join(";");
+        let hash = crypto.createHash('sha256').update(content).digest("hex");
         
         console.log(hash);
 

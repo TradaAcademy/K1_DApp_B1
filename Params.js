@@ -1,4 +1,4 @@
 module.exports = {
-    DIFFICULTY: 3,
+    DIFFICULTY: 5,
     BLOCK_SIZE: 2
 }

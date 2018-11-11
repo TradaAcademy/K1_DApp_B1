@@ -23,9 +23,9 @@ module.exports = class Miner {
             // Create new block
             let block = new Block(txs, this.chain.lastestBlockHash(), params.DIFFICULTY);
 
-            // Change nounce until block valid
+            // Change nonce until block valid
             while (!block.isValid()) {
-                block.increaseNounce();
+                block.increaseNonce();
             }
 
             // Insert new valid block to blockchain
