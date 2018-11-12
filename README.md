@@ -12,6 +12,8 @@
 2. Kiểm tra thông tin: http://localhost:4000
 3. Add transaction: http://localhost:4000/addTx?from=0x01&to=0x02&amount=1.5&gas=0.1
 
+Sau khi add tx, nhìn vào terminal output để xem tiến độ mine. Khi mine xong vào trang nói ở #2 trên để kiểm tra.
+
 ## Bài tập về nhà
 ### Bắt buộc
 1. Miner: Gắp transaction từ pool vào block theo thứ tự gas cao nhất
