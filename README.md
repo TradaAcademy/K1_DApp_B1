@@ -20,6 +20,7 @@
 ### Không bắt buộc
 1. Ở Miner, tạo 1 map (address->amount) để cache số dư của từng address sau mỗi tx. Khi có block mới được mined, chạy từng tx và update cache. Sửa hàm getBalance ở trên để get từ cache thay vì chạy lại từng tx từ block 0.
 2. Khi add 1 tx, kiểm tra xem địa chỉ _from_ có đủ số dư không, nếu đủ thì mới cho vào txPool. Nếu không, báo "Balance not enough" về web. Bởi vì ban đầu chưa ai có số dư nên không có ai có thể chuyển tiền, vì vậy hãy chọn 1 địa chỉ được "in tiền” (giả sử là “0xff”, và nếu tx có _from_ là địa chỉ này thì ko cần kiểm tra balance). Giao dịch đầu tiên là từ địa chỉ “in tiền”.
+3. Việc tăng 1 difficulty đang làm thời gian mining tăng lên rất đáng kể, nên khó dùng difficulty để điều chỉnh block time. Mà difficulty lại không thể là số thập phân được. Hãy nghĩ cách khắc phục.
 
 ### Suy nghĩ xa hơn
 1. Đang mine chưa xong 1 block thì có miner khác đã mine xong trước gửi block kết quả sang -> viết code để xử lý việc đó
