@@ -1,5 +1,8 @@
 # Khoá 1 DApp Bài 1
 
+## Nội dung bài
+Tạo 1 blockchain đơn giản bằng NodeJS, sử dụng cơ chế đồng thuận Proof of Work, và chỉ có 01 máy đào (Miner).
+
 ## Cài đặt
 
 1. Cài NodeJS
